@@ -463,7 +463,7 @@
                         <div style="text-align:center;">
                             <p style="font-size:16px;">
                                 <input type="checkbox" name="" id="agree_terms" checked>
-                                By clicking the button, you agree to the <a href="{{ route('terms') }}">Terms and Condition</a>
+                                By clicking the button, you agree to the <a href="{{ route('terms') }}" target="_blank">Terms and Condition</a>
                             </p>
                         </div>
                         <form action="{{ route('payment') }}" id="selectedform" method="post">
