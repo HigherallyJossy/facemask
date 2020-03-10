@@ -225,7 +225,7 @@
                                 <td colspan="4" height="15px"></td>
                             </tr>
                             <tr>
-                                <td colspan="4">
+                                <td colspan="4" style="padding-left:40px;">
                                     <label for="" style="font-size:22px;"><b>Total: {{ $feedback["totalprice"] }}</b></label>
                                 </td>
                             </tr>
