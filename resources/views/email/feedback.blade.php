@@ -27,7 +27,7 @@
                 </tr>
                 @if($feedback['role'] == "user")
                 <tr>
-                    <td>
+                    <td style="padding:0px 20px 0px 20px;">
                         <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
                             Hi
                         </p>
