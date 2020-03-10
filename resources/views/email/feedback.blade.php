@@ -52,7 +52,7 @@
                     <td style="padding-left:20px;">
                         <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
                             @if(!empty($feedback['order']))
-                                @if($feedback['role'] == "user") Your @endif Order : {{ $feedback['order'] }}
+                                @if($feedback['role'] == "user") Your @endif Order : <span style="font-size:18px;font-weight:500;">{{ $feedback['order'] }}</span> 
                             @endif
                         </p>
                     </td>
