@@ -63,11 +63,13 @@ class StripePaymentController extends Controller
             $feedback["name"] =  $request->get('name'); 
             $feedback["price"] =  $request->get('price'); 
             $feedback["count"] =  $request->get('count'); 
-            $feedback['paytype'] = "Stripe";
+            $feedback['paytype'] = "Credit Card";
+            $feedback['role'] = "admin";
             $feedback["totalprice"] = $request->total_price;
             $toEmail = env('ADMIN_MAIL');
            
             Mail::to($toEmail)->send(new FeedbackMail($feedback));
+            $feedback['role'] = "user";
             Mail::to($request->get('email'))->send(new FeedbackMail($feedback));
 
             session()->flash('pay_result', 'Your payment has been prosessed successfully!');

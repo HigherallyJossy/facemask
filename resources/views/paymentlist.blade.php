@@ -61,7 +61,7 @@
         }
     .has-error{border-color: #ee0000;}
     .paymethodlist{padding:0px;}
-    .cart_list{padding:20px;border:1px solid #868686;margin-top:25px;}
+    .cart_list{padding:20px 20px 35px 20px;border:1px solid #868686;margin-top:25px;}
     .btn_pay, .btn_pay_stripe, .btn_pay_cash, .btn_pay_credit{
         width: 100%;
         background: #2ca205;
@@ -76,6 +76,7 @@
         color:#2ca205;
     }
     #selectedform, .cash_area, .credit_area{display:none;}
+    .disabled_item{cursor: not-allowed;}
     @media(max-width:470px)
     {
         .user_action {padding: 6px 0px 6px 0px;height: auto;}
@@ -410,10 +411,10 @@
                                         </label>
                                     </li>
                                     <li>
-                                        <label class="user_action btn-approved">
+                                        <label class="user_action btn-approved disabled_item">
                                             <span class="" style="font-size: 20px;line-height: 40px;margin-left:35px;font-family:arial;">Paypal</span>
                                             <img src="./assets/images/paypal.jpg" style="float:right;height: 43px;margin-right: 10px;" alt="" srcset=""> 
-                                            <input type="radio" class="approved"  name="paymethod" value="paypal">
+                                            <input type="radio" class="approved" disabled name="paymethod" value="paypal">
                                             <span class="checkround_user"></span>
                                         </label>
                                     </li>
@@ -456,8 +457,9 @@
                                                                    
                                     </div>                                   
                                 </div>
-                            
-                            <label for="" style="float:right;">Total: <span class="ct-cart__product-total"> {{ $total_price }} </span> </label>
+                            <div>
+                                <label for="" style="float:right;font-size:22px;">Total: <span class="ct-cart__product-total"> {{ $total_price }} </span> </label>
+                            </div>                            
                         </div>
                         <br>
                         <div style="text-align:center;">
@@ -523,14 +525,17 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-xs-6">
-                                                            <select class="form-control card-expiry-year" data-stripe="exp_year">
-                                                                <option value="2017">2017</option>
-                                                                <option value="2018">2018</option>
-                                                                <option value="2019">2019</option>
+                                                            <select class="form-control card-expiry-year" data-stripe="exp_year">         
                                                                 <option value="2020" selected="">2020</option>
                                                                 <option value="2021">2021</option>
                                                                 <option value="2022">2022</option>
                                                                 <option value="2023">2023</option>
+                                                                <option value="2024">2024</option>
+                                                                <option value="2025">2025</option>
+                                                                <option value="2026">2026</option>
+                                                                <option value="2027">2027</option>
+                                                                <option value="2028">2028</option>
+                                                                <option value="2029">2029</option>
                                                             </select>
                                                         </div>
                                                     </div>
