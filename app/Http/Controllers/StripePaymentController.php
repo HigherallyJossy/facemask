@@ -47,6 +47,7 @@ class StripePaymentController extends Controller
                 "source" => $request->stripeToken,
                 "description" => "Payment from facemask99.com." 
             ]);
+            dd($temp);
         }
         catch(Exception $e) {           
             return back()->with("error",$e->getMessage()); 
