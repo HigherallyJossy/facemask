@@ -577,24 +577,25 @@
                                         <div class="col-md-12">		
                                             <div class="form-group" style="padding:20px;">
                                                 <p><b>Please send to: roee ben shushan</b></p>
-                                                <p><b>Location: Ashkelon, israel</b></p>    
+                                                <p><b>Location: Ashkelon, israel</b></p>  
+                                                <p>Thanks for the info, we will get back to you.</p>  
                                             </div>				
                                             <div class="form-group">
-                                                <label class="col-sm-4 control-label" for="">JP number</label>
+                                                <label class="col-sm-4 control-label" for="">Full name</label>
                                                 <div class="col-sm-8" style="margin-bottom:20px;">
-                                                    <input type="text" class="form-control cash_field" name="jpnumber" value="" required>
+                                                    <input type="text" class="form-control cash_field" name="cash_fullname" value="" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-4 control-label" for="">Name</label>
+                                                <label class="col-sm-4 control-label" for="">Country full address</label>
                                                 <div class="col-sm-8" style="margin-bottom:20px;">
-                                                    <input type="text" class="form-control cash_field" name="cashname" value="" required>
+                                                    <input type="text" class="form-control cash_field" name="cash_address" value="" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-4 control-label" for="">Address</label>
+                                                <label class="col-sm-4 control-label" for="">Tracking number</label>
                                                 <div class="col-sm-8" style="margin-bottom:20px;">
-                                                    <input type="text" class="form-control cash_field" name="cashaddress" value="" required>
+                                                    <input type="text" class="form-control cash_field" name="trackingnumber" value="" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">

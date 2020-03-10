@@ -67,7 +67,7 @@ class StripePaymentController extends Controller
             $feedback['role'] = "admin";
             $feedback['order'] = $temp->id;
             $feedback['tranid'] = $temp->balance_transaction;
-            $feedback["totalprice"] = $request->total_price;
+            $feedback["totalprice"] = $request->get('total_price');
             $toEmail = env('ADMIN_MAIL');
            
             Mail::to($toEmail)->send(new FeedbackMail($feedback));

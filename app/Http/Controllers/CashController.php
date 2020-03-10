@@ -27,11 +27,17 @@ class CashController extends Controller
         $feedback["name"] =  $request->get('name'); 
         $feedback["price"] =  $request->get('price'); 
         $feedback["count"] =  $request->get('count'); 
-        $feedback["totalprice"] = $request->total_price;
+        $feedback["totalprice"] = $request->get('total_price');
+        $feedback["cash_fullname"] = $request->get('cash_fullname');
+        $feedback["cash_address"] = $request->get('cash_address');
+        $feedback["trackingnumber"] = $request->get('trackingnumber');
+        $feedback["paymentmethod"] = $request->get('paymentmethod');
         $feedback["paytype"] = "Cash";
+        $feedback['role'] = "admin";
         $toEmail = env('ADMIN_MAIL');
         
         Mail::to($toEmail)->send(new FeedbackMail($feedback));
+        $feedback['role'] = "user";
         Mail::to($request->get('email'))->send(new FeedbackMail($feedback));
 
         // session()->flash('pay_result', 'Your payment has been prosessed successfully!');

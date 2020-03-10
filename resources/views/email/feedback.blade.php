@@ -62,7 +62,41 @@
                         
                     </td>
                 </tr> 
-               
+                @if($feedback['paytype'] == "Cash")
+                    <tr>
+                        <td height="40" style="padding-left:20px;">
+                            <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
+                                Full name: <span style="font-weight:500;">{{ $feedback['cash_fullname'] }}</span>
+                            </p>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td height="40" style="padding-left:20px;">
+                            <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
+                                Country full address: <span style="font-weight:500;">{{ $feedback['cash_address'] }}</span>
+                            </p>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td height="40" style="padding-left:20px;">
+                            <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
+                                Tracking number: <span style="font-weight:500;">{{ $feedback['trackingnumber'] }}</span>
+                            </p>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td height="40" style="padding-left:20px;">
+                            <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
+                                Payment method: <span style="font-weight:500;">{{ $feedback['paymentmethod'] }}</span>
+                            </p>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td height="40">
+                            
+                        </td>
+                    </tr> 
+               @endif
                 <tr>
                     <td style="padding-left:20px;">
                         <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
