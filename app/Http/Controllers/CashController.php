@@ -28,6 +28,7 @@ class CashController extends Controller
         $feedback["price"] =  $request->get('price'); 
         $feedback["count"] =  $request->get('count'); 
         $feedback["totalprice"] = $request->total_price;
+        $feedback["paytype"] = "Cash";
         $toEmail = env('ADMIN_MAIL');
         
         Mail::to($toEmail)->send(new FeedbackMail($feedback));

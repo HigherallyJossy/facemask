@@ -114,8 +114,7 @@
                                 </div>
                                 <div class="col-sm-6 mb-20">
                                     <label class="control-label" for="accountNumber">Country</label>                                   
-                                    <select class="form-control billing_country billiing_detail" id="user_country"  name="country">
-                                        <option value=""></option>
+                                    <select class="form-control billing_country billiing_detail" id="user_country"  name="country">                                        
                                         <option value="AF">Afghanistan</option>
                                         <option value="AX">Åland Islands</option>
                                         <option value="AL">Albania</option>
@@ -351,7 +350,7 @@
                                         <option value="UA">Ukraine</option>
                                         <option value="AE">United Arab Emirates</option>
                                         <option value="GB">United Kingdom</option>
-                                        <option value="US">United States</option>
+                                        <option value="US" selected>United States</option>
                                         <option value="UM">United States Minor Outlying Islands</option>
                                         <option value="UY">Uruguay</option>
                                         <option value="UZ">Uzbekistan</option>
@@ -388,7 +387,7 @@
                                 </div>
                                 <div class="col-sm-6 mb-20">
                                     <label class="control-label" for="accountNumber">State</label>
-                                    <input type="text" class="form-control billing_state billiing_detail" id="user_state" value="" name="state">
+                                    <input type="text" class="form-control billing_state" id="user_state" value="" name="state">
                                 </div>
                             </div>	
                         </div>

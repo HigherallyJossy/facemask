@@ -63,6 +63,7 @@ class StripePaymentController extends Controller
             $feedback["name"] =  $request->get('name'); 
             $feedback["price"] =  $request->get('price'); 
             $feedback["count"] =  $request->get('count'); 
+            $feedback['paytype'] = "Stripe";
             $feedback["totalprice"] = $request->total_price;
             $toEmail = env('ADMIN_MAIL');
            

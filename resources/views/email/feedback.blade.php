@@ -17,7 +17,9 @@
                 
                 <tr>
                     <td style="padding-left:20px;" align="center">
-                        <p style="font-weight:600;font-size:36px;"><span style="color:#004000;">facemask99.com</span></p>
+                        <a href="https://facemask99.com">
+                            <img src="https://testing.adnlist.com/assets/images/emaillogo.jpg" alt="">
+                        </a>
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +59,18 @@
                                             
                     </td>
                 </tr> 
-
+                <tr>
+                    <td style="border-bottom:1px solid #000000;" height="10">
+                        
+                    </td>
+                </tr> 
+                <tr>
+                    <td style="padding-left:20px;">
+                        <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
+                            Payment type: {{ $feedback['paytype'] }}
+                        </p>
+                    </td>
+                </tr> 
                 <tr>
                     <td style="border-bottom:1px solid #000000;" height="10">
                         

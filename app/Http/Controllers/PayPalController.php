@@ -60,6 +60,7 @@ class PayPalController extends Controller
         $feedback["price"] =  $request->get('price'); 
         $feedback["count"] =  $request->get('count'); 
         $feedback["totalprice"] = $request->total_price;
+        $feedback['paytype'] = "Paypal";
         $toEmail = env('ADMIN_MAIL');
         
         Mail::to($toEmail)->send(new FeedbackMail($feedback));
