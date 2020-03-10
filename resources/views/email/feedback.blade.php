@@ -25,6 +25,7 @@
                 <tr>
                     <td height="40"></td>
                 </tr>
+                @if($feedback['role'] == "user")
                 <tr>
                     <td>
                         <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
@@ -40,16 +41,17 @@
                             Your shipping confirmation is below. Thank you again for your business.
                         </p>
                     </td>
-                </tr>  
+                </tr>                  
                 <tr>
                     <td height="20">
                         
                     </td>
                 </tr> 
+                @endif
                 <tr>
                     <td style="padding-left:20px;">
                         <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
-                            Your Order 
+                            @if($feedback['role'] == "user") Your @endif Order 
                         </p>
                     </td>
                 </tr>  
