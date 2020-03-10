@@ -76,6 +76,11 @@
         color:#2ca205;
     }
     .stripe_area, .cash_area, .credit_area{display:none;}
+    @media(max-width:400px)
+    {
+        .user_action {padding: 6px 0px 6px 0px;}
+        .checkround_user {left: 10px;}
+    }
 </style>
 <body>
 	<div class="container">
@@ -398,15 +403,7 @@
                                 <ul class="paymethodlist">
                                     <li>
                                         <label class="user_action btn-approved">
-                                            <span class="" style="font-size: 20px;line-height: 40px;margin-left:40px;font-family:arial;">Credit card</span>
-                                            <img src="./assets/images/cards.png" style="float:right;" alt="" srcset=""> 
-                                            <input type="radio" class="approved"  name="paymethod" value="credit">
-                                            <span class="checkround_user"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="user_action btn-approved">
-                                            <span class="" style="font-size: 20px;line-height: 40px;margin-left:40px;font-family:arial;">Stripe</span>
+                                            <span class="" style="font-size: 20px;line-height: 40px;margin-left:35px;font-family:arial;">Stripe</span>
                                             <img src="./assets/images/stripe.png" style="float:right;height: 43px;margin-right: 10px;" alt="" srcset="">
                                             <input type="radio" class="approved"  name="paymethod" value="stripe">
                                             <span class="checkround_user"></span>
@@ -414,7 +411,7 @@
                                     </li>
                                     <li>
                                         <label class="user_action btn-approved">
-                                            <span class="" style="font-size: 20px;line-height: 40px;margin-left:40px;font-family:arial;">Paypal</span>
+                                            <span class="" style="font-size: 20px;line-height: 40px;margin-left:35px;font-family:arial;">Paypal</span>
                                             <img src="./assets/images/paypal.jpg" style="float:right;height: 43px;margin-right: 10px;" alt="" srcset=""> 
                                             <input type="radio" class="approved"  name="paymethod" value="paypal">
                                             <span class="checkround_user"></span>
@@ -422,9 +419,17 @@
                                     </li>
                                     <li>
                                         <label class="user_action btn-approved">
-                                            <span class="" style="font-size: 20px;line-height: 40px;margin-left:40px;font-family:arial;">Cash</span>
-                                            <img src="./assets/images/cash.jpg" style="float:right;height: 43px;margin-right: 10px;" alt="" srcset=""> 
+                                            <span class="" style="font-size: 20px;line-height: 40px;margin-left:35px;font-family:arial;">Cash</span>
+                                            <img src="./assets/images/westerngram.png" style="float:right;height: 43px;margin-right: 10px;" alt="" srcset=""> 
                                             <input type="radio" class="approved"  name="paymethod" value="cash">
+                                            <span class="checkround_user"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="user_action btn-approved">
+                                            <span class="" style="font-size: 20px;line-height: 40px;margin-left:35px;font-family:arial;">Credit card</span>
+                                            <img src="./assets/images/stripe.png" style="float:right;height: 43px;margin-right: 10px;" alt="" srcset="">
+                                            <input type="radio" class="approved"  name="paymethod" value="credit">
                                             <span class="checkround_user"></span>
                                         </label>
                                     </li>
@@ -564,7 +569,11 @@
                                 @csrf
                                 <fieldset>
                                     <div class="row">					
-                                        <div class="col-md-12">						
+                                        <div class="col-md-12">		
+                                            <div class="form-group" style="padding:20px;">
+                                                <p><b>Please send to: roee ben shushan</b></p>
+                                                <p><b>Location: Ashkelon, israel</b></p>    
+                                            </div>				
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label" for="">JP number</label>
                                                 <div class="col-sm-8" style="margin-bottom:20px;">
@@ -586,7 +595,11 @@
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label" for="">Payment method</label>
                                                 <div class="col-sm-8" style="margin-bottom:20px;">
-                                                    <input type="text" class="form-control cash_field" name="paymentmethod" value="" required>
+                                                    <select class="form-control cash_field" name="paymentmethod">
+                                                        <option value=""></option>
+                                                        <option value="western union">western union</option>
+                                                        <option value="money gram">money gram</option>
+                                                    </select>
                                                 </div>
                                             </div>     
                                             <div class="form-group">
@@ -612,8 +625,8 @@
                            
                         </div>    
                         <div class="credit_area">                           
-                            <form role="form" action="{{ route('creditpayment') }}" method="post" class="" id="credit-form">
-                                @csrf
+                            {{-- <form role="form" action="{{ route('creditpayment') }}" method="post" class="" id="credit-form">
+                                @csrf --}}
                                 <input type="hidden" class="form-control" name="total_price" value="{{ $total_price }}" >
                                                       
                                 <input type="hidden" name="email" class="user_email" value="">
@@ -624,10 +637,11 @@
 
                                 <div class="form-group">
                                     <div class="" style="text-align:center;margin-top:20px;">
-                                        <button type="button" name="pay" class="btn_pay_credit btn_get_detail">Pay Now</button>
+                                        {{-- <button type="button" name="pay" class="btn_pay_credit btn_get_detail">Pay Now</button> --}}
+                                        <a target="_blank" style="display:block;text-decoration: none;" href="https://pay.tranzila.com/daniel1982" class="btn_pay_credit btn_get_detail">Pay Now</a>
                                     </div>							
                                 </div>
-                            </form>                           
+                            {{-- </form>                            --}}
                         </div>                          
 					</div>					
 				</div>			
@@ -768,7 +782,8 @@
                 var checked = checkvalidation();
                 if(checked)
                 {
-                    $('#credit-form').submit();
+                    // $('#credit-form').submit();
+                    return true;
                 }
                 else
                 {
