@@ -75,7 +75,7 @@
         background:#fff;
         color:#2ca205;
     }
-    .stripe_area, .cash_area, .credit_area{display:none;}
+    #selectedform, .cash_area, .credit_area{display:none;}
     @media(max-width:470px)
     {
         .user_action {padding: 6px 0px 6px 0px;height: auto;}
@@ -405,7 +405,7 @@
                                         <label class="user_action btn-approved">
                                             <span class="" style="font-size: 20px;line-height: 40px;margin-left:35px;font-family:arial;">Credit card</span>
                                             <img src="./assets/images/stripe.png" style="float:right;height: 43px;margin-right: 10px;" alt="" srcset="">
-                                            <input type="radio" class="approved"  name="paymethod" value="stripe">
+                                            <input type="radio" class="approved"  name="paymethod" checked value="stripe">
                                             <span class="checkround_user"></span>
                                         </label>
                                     </li>
