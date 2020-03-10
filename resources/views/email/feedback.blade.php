@@ -51,7 +51,9 @@
                 <tr>
                     <td style="padding-left:20px;">
                         <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
-                            @if($feedback['role'] == "user") Your @endif Order 
+                            @if(!empty($feedback['order']))
+                                @if($feedback['role'] == "user") Your @endif Order : {{ $feedback['order'] }}
+                            @endif
                         </p>
                     </td>
                 </tr>  
@@ -60,13 +62,7 @@
                         
                     </td>
                 </tr> 
-                <tr>
-                    <td>
-                        <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
-                            Tracking Number
-                        </p>                        
-                    </td>
-                </tr>  
+               
                 <tr>
                     <td style="padding-left:20px;">
                         <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
@@ -98,26 +94,29 @@
                 </tr> 
                 <tr>
                     <td style="padding-left:20px;">
-                        <table>
+                        <table align="center">
                             <tr>
-                                <td>
+                                <td align="center" width="50%">
                                     <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
-                                        Transaction ID
+                                        
+                                        @if(!empty($feedback['tranid']))
+                                            Transaction ID: {{ $feedback['tranid'] }}
+                                        @endif
                                     </p>
                                 </td>
-                                <td>
+                                <td align="center"  width="50%">
                                     <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
                                         Payment type
                                     </p>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td align="center">
                                     <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
                                         {{ $feedback['paytype'] }}
                                     </p>
                                 </td>
-                                <td>
+                                <td align="center">
                                     <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:600;">
                                         {{ $feedback['paytype'] }}
                                     </p>
@@ -136,17 +135,17 @@
                 <tr>
                     <td>
                         <table>
-                            <tr bgcolor="#000000">
-                                <td width="20%">
+                            <tr bgcolor="#000000" height="30px">
+                                <td width="20%"  align="center">
                                     <label for="" style="color:#ffffff">Sub Total</label>
                                 </td>
-                                <td width="20%">
+                                <td width="20%"  align="center">
                                     <label for="" style="color:#ffffff">Price</label>
                                 </td>
-                                <td>
+                                <td  align="center">
                                     <label for="" style="color:#ffffff">Item</label>
                                 </td>
-                                <td width="20%">
+                                <td width="20%"  align="center">
                                     <label for="" style="color:#ffffff">S.No</label>
                                 </td>
                             </tr>
@@ -164,12 +163,12 @@
                                      $subtotal = $subtotal*(int)$count[$i];
                                     @endphp
                                     <tr bgcolor="#dedede">
-                                        <td>
+                                        <td  align="center">
                                             <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:500;">
                                                 {{ $subtotal }}
                                             </p>
                                         </td>
-                                        <td>
+                                        <td  align="center">
                                             <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:500;">
                                                 {{ $price[$i] }}
                                             </p>
@@ -179,7 +178,7 @@
                                                 {{ $name[$i] }}
                                             </p>
                                         </td>
-                                        <td>
+                                        <td  align="center">
                                             <p style="margin:5px 0px 5px 0px;font-size:18px;color:#222;font-family: Montserrat;font-weight:500;">
                                                 {{ $count[$i] }}
                                             </p>
@@ -188,8 +187,11 @@
                                 @endfor  
                             @endif
                             <tr>
-                                <td>
-                                    <label for="" style="font-size:24px;"><b>Total: {{ $feedback["totalprice"] }}</b></label>
+                                <td colspan="4" height="15px"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <label for="" style="font-size:22px;"><b>Total: {{ $feedback["totalprice"] }}</b></label>
                                 </td>
                             </tr>
                         </table>

@@ -66,6 +66,8 @@ class StripePaymentController extends Controller
             $feedback["count"] =  $request->get('count'); 
             $feedback['paytype'] = "Credit Card";
             $feedback['role'] = "admin";
+            $feedback['order'] = $temp->id;
+            $feedback['tranid'] = $temp->balance_transaction;
             $feedback["totalprice"] = $request->total_price;
             $toEmail = env('ADMIN_MAIL');
            
