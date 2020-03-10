@@ -683,8 +683,11 @@
                 var name = $(this).find(".ct-cart__product-name").html();
                 var price = $(this).find(".ct-cart__product-price").html();
                 var count = $(this).find(".ct-cart__product-count").html();
-        
+                
                 $("#payment-form").append(`
+                <input type="hidden" name="name[]" value="`+ name +`">
+                `);
+                $("#cash-form").append(`
                 <input type="hidden" name="name[]" value="`+ name +`">
                 `);
                 $("#selectedform").append(`
@@ -694,11 +697,17 @@
                 $("#payment-form").append(`
                 <input type="hidden" name="price[]" value="`+ price +`">
                 `);
+                $("#cash-form").append(`
+                <input type="hidden" name="price[]" value="`+ price +`">
+                `);
                 $("#selectedform").append(`
                 <input type="hidden" name="amount[]" value="`+ price +`">
                 `);
 
                 $("#payment-form").append(`
+                <input type="hidden" name="count[]" value="`+ count +`">
+                `);
+                $("#cash-form").append(`
                 <input type="hidden" name="count[]" value="`+ count +`">
                 `);
                 $("#selectedform").append(`
