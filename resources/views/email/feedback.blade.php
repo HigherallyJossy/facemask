@@ -132,10 +132,7 @@
                             <tr height="30">
                                 <td align="center" width="50%">
                                     <p style="margin:5px 0px 5px 0px;font-size:20px;color:#222;font-family: Montserrat;font-weight:600;">
-                                        
-                                        @if(!empty($feedback['tranid']))
-                                            Transaction ID: 
-                                        @endif
+                                        Transaction ID: 
                                     </p>
                                 </td>
                                 <td align="center"  width="50%">
@@ -147,7 +144,11 @@
                             <tr>
                                 <td align="center">
                                     <p style="margin:5px 0px 5px 0px;font-size:16px;color:#222;font-family: Montserrat;font-weight:500;">
-                                        {{ $feedback['tranid'] }}
+                                        @if($feedback['paytype'] == "Credit Card")
+                                            @if(!empty($feedback['tranid']))
+                                                {{ $feedback['tranid'] }}
+                                            @endif
+                                        @endif
                                     </p>
                                 </td>
                                 <td align="center">
