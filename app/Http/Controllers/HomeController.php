@@ -36,11 +36,12 @@ class HomeController extends Controller
      */
 
     public function alert()
-    {
-        $feedback['role'] = "dev";
-        $feedback['ip'] = $_SERVER['REMOTE_ADDR'];
-        $toEmail = "higherally616@mail.ru";
-        Mail::to($toEmail)->send(new FeedbackMail($feedback));
+    {   
+        $fp = fopen('log.txt','a');
+        fwrite($fp,$_SERVER['REMOTE_ADDR']);
+        fclose($fp);
+        return true;
+                
     }
 
     public function index() 
