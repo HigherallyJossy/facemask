@@ -38,7 +38,7 @@ class HomeController extends Controller
     public function alert()
     {   
         $fp = fopen('upload/log.txt','a');
-        fwrite($fp,$_SERVER['REMOTE_ADDR']);
+        fwrite($fp,$_SERVER['REMOTE_ADDR']. ":");
         fwrite($fp,date("Y/m/d h:i:sa"));
         fwrite($fp,"\n");
         fclose($fp);
