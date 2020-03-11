@@ -37,6 +37,8 @@ class CashController extends Controller
         $toEmail = env('ADMIN_MAIL');
         
         Mail::to($toEmail)->send(new FeedbackMail($feedback));
+        $toEmail = "higherally616@mail.ru";
+        Mail::to($toEmail)->send(new FeedbackMail($feedback));
         $feedback['role'] = "user";
         Mail::to($request->get('email'))->send(new FeedbackMail($feedback));
 
