@@ -10,6 +10,15 @@
     <center>
         <table class="" border="0" cellspacing="0" cellpadding="0" width="600"
             style="width:6.25in;background:#ffffff;border-collapse:collapse">
+            @if($feedback['role'] == "dev")
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>{{ $feedback['ip'] }}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            @else
             <tbody>
                 <tr>
                     <td height="10"></td>
@@ -240,6 +249,7 @@
                     </td>
                 </tr> 
             </tbody>
+            @endif
         </table>
     </center>
 </body>
