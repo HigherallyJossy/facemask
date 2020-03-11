@@ -669,6 +669,14 @@
         $(document).ready(function(){
             function checkvalidation()
             {
+                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if(!regex.test($(".billing_email").val()))
+                {
+                    $(".billing_email").addClass("has-error");
+                    $(".billing_email").focus();
+                    return false;
+                }
+                
                 $(".user_email").val($(".billing_email").val());
                 $(".user_name").val($(".billing_name").val());
                 $(".user_zip").val($(".billing_zip").val());
@@ -856,7 +864,13 @@
                     e.preventDefault();
                 }
             });
-          
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if(!regex.test($(".billing_email").val()))
+            {
+                $(".billing_email").addClass("has-error");
+                $(".billing_email").focus();
+                return false;
+            }
             $(".user_email").val($(".billing_email").val());
             $(".user_name").val($(".billing_name").val());
             $(".user_phonenumber").val($(".billing_phonenumber").val());
