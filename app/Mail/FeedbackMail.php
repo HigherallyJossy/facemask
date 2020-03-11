@@ -28,6 +28,6 @@ class FeedbackMail extends Mailable
      */
     public function build()
     {
-        return $this->subject("Payment success!")->view('email.feedback');
+        return $this->subject("Payment success from Facemask99.com!")->view('email.feedback');
     }
 }
