@@ -61,8 +61,8 @@
                 text-align: center;
             }
             .error_page{
-                margin-top: 150px;
-                margin-left: 150px;
+               margin:150px 200px auto;
+               text-align: center;
             }
             .error_title{
                 font-size: 38px;
@@ -71,7 +71,7 @@
             .error_content{
                 font-size: 40px;
                 color: #000;
-                margin-top: 220px;
+                margin-top: 70px;
                 margin-left: 90px;
                 font-weight: 600;
             }
@@ -104,7 +104,7 @@
         <nav class="navbar navbar-default navbar-fixed-top" data-spy="affix" data-offset-top="10">
             <div class="container">
                 <div class="navbar-header">
-					<div class="logo"> <a href="{{ url('/') }}"><img src="{{ asset('assets/images/products/logo.png') }}" alt="image" /></a> </div>
+					<div class="logo"> <a href="{{ url('/') }}"><img src="{{ asset('assets/images/products/logo.png') }}" style="height:60px;" alt="image" /></a> </div>
                     <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse"
                         class="navbar-toggle collapsed" type="button">
                         <span class="sr-only">Toggle navigation</span>
