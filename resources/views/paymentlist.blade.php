@@ -47,6 +47,10 @@
         border-color: #32aa1d;
         transition: 0.8s;
     }
+    .alert_billing{
+        display: none;
+        padding:20px;
+    }
     .checkround_user {
         position: absolute;
         top: 18px;
@@ -648,7 +652,13 @@
                                     </div>							
                                 </div>
                             {{-- </form>                            --}}
-                        </div>                          
+                        </div>   
+                        
+                        <div class="alert_billing">
+                            <div style="border: 1px solid #da1212;padding: 10px;">
+                                <p style="margin:0px;text-align:center;">Billing details are require. Please input them.</p>
+                            </div>
+                        </div>
 					</div>					
 				</div>			
 					
@@ -718,6 +728,7 @@
             
 
             $(".billiing_detail").bind("keyup change", function(e) {
+                $(".alert_billing").fadeOut('slow');
                 if($(this).hasClass("has-error"))
                 {
                     $(this).removeClass("has-error");
@@ -764,6 +775,7 @@
                 }
                 else
                 {
+                    $(".alert_billing").fadeIn('slow');
                     return false;
                 }
             });
@@ -784,12 +796,13 @@
                         $('#cash-form').submit();
                     }
                     else
-                    {
+                    {                        
                         return false;
                     }
                 }
                 else
                 {
+                    $(".alert_billing").fadeIn('slow');
                     return false;
                 }
             });
@@ -802,6 +815,7 @@
                 }
                 else
                 {
+                    $(".alert_billing").fadeIn('slow');
                     return false;
                 }
             });
@@ -858,6 +872,7 @@
             });
             if(check > 0)
             {
+                $(".alert_billing").fadeIn('slow');
                 return false;
             }
 
