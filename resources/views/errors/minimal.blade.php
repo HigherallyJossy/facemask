@@ -71,8 +71,7 @@
             .error_content{
                 font-size: 40px;
                 color: #000;
-                margin-top: 70px;
-                margin-left: 90px;
+                margin-top: 70px;                
                 font-weight: 600;
             }
             @media(max-width:767px)
