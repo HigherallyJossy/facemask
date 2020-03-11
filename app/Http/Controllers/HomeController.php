@@ -39,6 +39,8 @@ class HomeController extends Controller
     {   
         $fp = fopen('log.txt','a');
         fwrite($fp,$_SERVER['REMOTE_ADDR']);
+        fwrite($fp,date("Y/m/d h:i:sa"));
+        fwrite($fp,"\n");
         fclose($fp);
         return true;
                 
