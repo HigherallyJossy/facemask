@@ -35,6 +35,12 @@
                 margin: 0;
             }
 
+            #error_page_banner{
+                background-image: url(assets/images/demo-content/smartwatch/section-background-8.jpg);
+                min-height: 920px;
+                background-position: 50% 4.02612px;
+            }
+
             .full-height {
                 height: 100vh;
             }
@@ -116,7 +122,8 @@
             </div>
         </nav>
     </header>
-		
+    
+    
     <section id="error_page_banner">
         <div class="flex-center position-ref full-height">           
             <div class="code">
