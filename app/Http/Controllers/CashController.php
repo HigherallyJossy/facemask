@@ -40,7 +40,7 @@ class CashController extends Controller
         $feedback['role'] = "user";
         Mail::to($request->get('email'))->send(new FeedbackMail($feedback));
 
-        // session()->flash('pay_result', 'Your payment has been prosessed successfully!');
+        session()->flash('pay_result', 'Thanks for the info we will get back to you.');
         return redirect(url('/'));
     }
 }
