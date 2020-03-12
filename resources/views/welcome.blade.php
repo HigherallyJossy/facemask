@@ -188,10 +188,10 @@
 		</div>
 	</div>
 	<div class="ct-cart" style="display:none !important;">
-		<form action="{{ route('paymentlist') }}" method="post" id="total_price_form">
-			@csrf
+		{{-- <form action="{{ route('paymentlist') }}" method="post" id="total_price_form"> --}}
+			{{-- @csrf
 			<input type="hidden" name="total_price" class="total_price" value="">
-		</form>
+		</form> --}}
 		<div class="ct-cart__inner">
 			<div class="ct-cart__button ct-js-cart__button"><i class="fa fa-shopping-cart"></i></div>
 			<div class="ct-cart__message"><i class="fa fa-thumbs-o-up"></i></div>
