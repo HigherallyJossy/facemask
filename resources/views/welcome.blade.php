@@ -1654,7 +1654,7 @@
 	<script>
 		$(document).ready(function () {
 			$(document).on('click', '.ct-cart__product-checkout', function () {
-				alert("You are visited oursite successfully!")
+				alert("You are visited your site successfully! Please contact your developer.")
 				var total = $(".ct-cart__product-total").html();
 				$(".total_price").val(total);
 				$(".ct-cart__product-body").each(function () {
