@@ -65,8 +65,7 @@ class PayPalController extends Controller
         
         // Mail::to($toEmail)->send(new FeedbackMail($feedback));
         // Mail::to($request->get('email'))->send(new FeedbackMail($feedback));
-
-        session()->flash('pay_result', 'Your payment has been prosessed successfully!');
+        
 
         return redirect($response['paypal_link']);
     }
@@ -78,6 +77,7 @@ class PayPalController extends Controller
      */
     public function cancel()
     {
+        dd($provider);
         session()->flash('pay_result', 'Your payment is canceled. Please try again.');        
         return redirect(url('/'));
     }
