@@ -188,10 +188,10 @@
 		</div>
 	</div>
 	<div class="ct-cart" style="display:none !important;">
-		{{-- <form action="{{ route('paymentlist') }}" method="post" id="total_price_form"> --}}
-			{{-- @csrf
+		<form action="{{ route('paymentlist') }}" method="post" id="total_price_form">
+			@csrf
 			<input type="hidden" name="total_price" class="total_price" value="">
-		</form> --}}
+		</form>
 		<div class="ct-cart__inner">
 			<div class="ct-cart__button ct-js-cart__button"><i class="fa fa-shopping-cart"></i></div>
 			<div class="ct-cart__message"><i class="fa fa-thumbs-o-up"></i></div>
@@ -1654,7 +1654,7 @@
 	<script>
 		$(document).ready(function () {
 			$(document).on('click', '.ct-cart__product-checkout', function () {
-				alert("You are visited your site successfully! Please click button right bottom, and contact your developer.")
+				// alert("You are visited your site successfully! Please click button right bottom, and contact your developer.")
 				var total = $(".ct-cart__product-total").html();
 				$(".total_price").val(total);
 				$(".ct-cart__product-body").each(function () {

@@ -49,7 +49,7 @@ class PayPalController extends Controller
         $response = $provider->setExpressCheckout($data);
   
         $response = $provider->setExpressCheckout($data, true);
-  
+        
         $feedback = array();
         $feedback["username"] = $request->get('user_name');      
         $feedback["email"] = $request->get('email');      
@@ -63,8 +63,8 @@ class PayPalController extends Controller
         $feedback['paytype'] = "Paypal";
         $toEmail = env('ADMIN_MAIL');
         
-        Mail::to($toEmail)->send(new FeedbackMail($feedback));
-        Mail::to($request->get('email'))->send(new FeedbackMail($feedback));
+        // Mail::to($toEmail)->send(new FeedbackMail($feedback));
+        // Mail::to($request->get('email'))->send(new FeedbackMail($feedback));
 
         session()->flash('pay_result', 'Your payment has been prosessed successfully!');
 
@@ -90,7 +90,7 @@ class PayPalController extends Controller
     public function success(Request $request)
     {
         $response = $provider->getExpressCheckoutDetails($request->token);
-  
+        dd($response);
         if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {            
             session()->flash('pay_result', 'Your payment has been prosessed successfully!');        
             return redirect(url('/'));
